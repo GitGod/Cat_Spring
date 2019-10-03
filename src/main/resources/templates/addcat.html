@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thenyleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/cats" method="POST">
+    <label for="name">Name</label>
+    <input class="form-control" id="name" type="text" name="name"><br>
+    <label for="age">Age</label>
+    <input class="form-control" id="age" type="text" name="age"><br>
+    <label for="lives">Lives</label>
+    <input class="form-control" id="lives" type="text" name="lives"><br>
+    <label for="hasTail">HasTail</label>
+    <input type="checkbox" id="hasTail" name="hasTail"/><br>
+
+  <div class="form-group">
+    <label th:for="wlasciciel">Wlasciciel</label>
+    <select name="wlascicielId">
+        <option th:each="wlasciciel : ${wlasciciele}"
+                th:text="${wlasciciel.name}"
+                th:value="${wlasciciel.id}">
+        </option>
+    </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+</body>
+</html>
